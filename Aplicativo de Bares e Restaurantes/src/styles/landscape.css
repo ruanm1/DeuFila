@@ -1,0 +1,90 @@
+/* Otimizações para modo paisagem (landscape) */
+
+/* Dispositivos móveis em landscape */
+@media (max-height: 500px) and (orientation: landscape) {
+  /* Reduz padding vertical para aproveitar melhor o espaço */
+  .space-y-6 {
+    row-gap: 1rem !important;
+  }
+  
+  .space-y-4 {
+    row-gap: 0.75rem !important;
+  }
+
+  /* Ajusta altura de cards para não ocupar toda a tela */
+  .h-40 {
+    height: 8rem !important;
+  }
+
+  /* Bottom navigation mais compacta */
+  .h-16 {
+    height: 3rem !important;
+  }
+
+  /* Texto menor em landscape para caber mais conteúdo */
+  h1 {
+    font-size: 1.5rem !important;
+  }
+
+  h2 {
+    font-size: 1.25rem !important;
+  }
+
+  /* Avatars e ícones menores */
+  .w-24 {
+    width: 4rem !important;
+  }
+
+  .h-24 {
+    height: 4rem !important;
+  }
+
+  /* Padding reduzido nas telas */
+  .p-4 {
+    padding: 0.75rem !important;
+  }
+
+  .pt-6 {
+    padding-top: 1rem !important;
+  }
+
+  /* Modais ocupam largura total em landscape */
+  .max-w-md {
+    max-width: 100% !important;
+  }
+
+  /* Grid mais compacto */
+  .grid {
+    gap: 0.5rem !important;
+  }
+}
+
+/* Tablets em landscape */
+@media (min-width: 768px) and (orientation: landscape) {
+  /* Aproveita espaço horizontal */
+  .max-w-md {
+    max-width: 768px !important;
+  }
+
+  /* Layout em duas colunas quando possível */
+  @supports (display: grid) {
+    .venue-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+}
+
+/* Ajustes específicos para navegação em landscape */
+@media (orientation: landscape) {
+  /* Fixa navegação inferior com menor altura */
+  .fixed.bottom-0 {
+    backdrop-filter: blur(10px);
+  }
+
+  /* Scroll suave em landscape */
+  .overflow-auto {
+    scroll-behavior: smooth;
+  }
+}
