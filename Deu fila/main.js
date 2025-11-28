@@ -10,6 +10,11 @@ form.addEventListener("submit", (event) => {
         alert("Por favor, preencha o seu nome");
         return;
     }
+    form.submit();
+})
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();    
     if(emailInput.value ===""){
         alert("Por favor, preencha o seu e-mail");
         return;
