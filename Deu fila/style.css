@@ -1,58 +1,216 @@
-*{
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-}
-.login-container {
-    background-color: white;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2rem;
-    border: 1px solid #CCC;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-a{
-    color: orangered;
-    text-align: center;
-}
-body{
-    padding: 1rem;
-    background-image: linear-gradient(to right, orangered, orange, orangered);
-}
-h1{
-    text-align: center;
-}
-form {
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f6f6f6;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 500px;
-    margin: 0 auto;
-    background-color: transparent;
+    justify-content: center;
 }
-input, select, textarea {
-    max-width: 350px;
+
+.page-wrapper {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #CCC;
-    border-radius: 10px;
-    font-size: 1.1rem;
-
+    max-width: 420px;
+    background: #f6f6f6;
 }
-button {
-    padding: 10px;
+/* LISTA - miniaturas */
+.thumb {
+    width: 92px;
+    height: 92px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* FOTO */
+.header-image {
+    position: relative;
+}
+
+.bar-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.back-btn {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    width: 44px;
+    height: 44px;
+    background: white;
     border: none;
-    border-radius: 10px;
-    background-color: #333;
-    color: #FFF;
-    font-size: 1.1rem;
-    cursor: pointer;
-    max-width: 350px;
+    border-radius: 50%;
+    font-size: 22px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 
+.tag-alert {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    background: #ff4e4e;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 26px;
+    font-size: 14px;
+    font-weight: 500;
 }
-.logo{
-    width: 100px;
-    display: block;
-    margin: 0 auto 1rem auto;
-    max-width: 150px;
+
+/* CONTAINER */
+.container {
+    background: white;
+    padding: 22px;
+    border-radius: 26px 26px 0 0;
+    margin-top: -18px;
 }
+
+h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* RATING */
+.rating {
+    margin-top: 6px;
+    color: #555;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* SVG ÍCONES */
+.icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* PROMOÇÃO */
+.promo-badge {
+    background: #ffe14d;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 18px;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.promo-card {
+    margin-top: 14px;
+    background: linear-gradient(90deg, #ff5c00, #ff0000);
+    color: white;
+    padding: 16px;
+    border-radius: 16px;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+/* DESCRIÇÃO */
+.description {
+    margin-top: 16px;
+    color: #555;
+    line-height: 22px;
+    font-size: 15px;
+}
+
+/* GRID */
+.info-grid {
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.info-card {
+    flex: 1;
+    background: #f7f7f7;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.info-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.info-title {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.info-value {
+    margin-top: 6px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #222;
+}
+
+/* EXTRA CARDS */
+.extra-card {
+    background: #f7f7f7;
+    margin-top: 16px;
+    padding: 18px;
+    border-radius: 16px;
+}
+
+.extra-title {
+    margin: 0;
+    color: #666;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.extra-text {
+    margin-top: 8px;
+    color: #333;
+    font-size: 15px;
+}
+
+/* BOTÃO RESERVA */
+.reserve-btn {
+    width: 100%;
+    margin-top: 22px;
+    padding: 16px;
+    border: none;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff7200, #ff2600);
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 100, 0, 0.3);
+}
+.header-image {
+    max-height: 210px;
+    overflow: hidden;
+}
+/* FOTO DO PERFIL */
+.bar-image {
+    width: 100%;
+    height: 210px;      /* tamanho perfeito estilo app */
+    object-fit: cover;
+}
+.tag-alert {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    padding: 8px 18px;
+    border-radius: 26px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+
+
+.tag-alert.red {
+  background-color: #ff3b30; /* lotado */
+}
+
+.tag-alert.orange {
+  background-color: #ff9500; /* moderado */
+}
+
+.tag-alert.green {
+  background-color: #34c759; /* vazio */
+}
+
