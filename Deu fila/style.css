@@ -11,7 +11,6 @@ body {
     max-width: 420px;
     background: #f6f6f6;
 }
-/* LISTA - miniaturas */
 .thumb {
     width: 92px;
     height: 92px;
@@ -19,10 +18,10 @@ body {
     border-radius: 16px;
 }
 
-/* FOTO */
 .header-image {
     position: relative;
 }
+
 
 .bar-image {
     width: 100%;
@@ -55,7 +54,6 @@ body {
     font-weight: 500;
 }
 
-/* CONTAINER */
 .container {
     background: white;
     padding: 22px;
@@ -68,7 +66,6 @@ h2 {
     font-size: 22px;
 }
 
-/* RATING */
 .rating {
     margin-top: 6px;
     color: #555;
@@ -78,14 +75,12 @@ h2 {
     gap: 4px;
 }
 
-/* SVG ÍCONES */
 .icon {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
 }
 
-/* PROMOÇÃO */
 .promo-badge {
     background: #ffe14d;
     border: none;
@@ -105,7 +100,6 @@ h2 {
     font-size: 15px;
 }
 
-/* DESCRIÇÃO */
 .description {
     margin-top: 16px;
     color: #555;
@@ -113,7 +107,6 @@ h2 {
     font-size: 15px;
 }
 
-/* GRID */
 .info-grid {
     display: flex;
     gap: 14px;
@@ -146,7 +139,6 @@ h2 {
     color: #222;
 }
 
-/* EXTRA CARDS */
 .extra-card {
     background: #f7f7f7;
     margin-top: 16px;
@@ -167,7 +159,6 @@ h2 {
     font-size: 15px;
 }
 
-/* BOTÃO RESERVA */
 .reserve-btn {
     width: 100%;
     margin-top: 22px;
@@ -184,10 +175,9 @@ h2 {
     max-height: 210px;
     overflow: hidden;
 }
-/* FOTO DO PERFIL */
 .bar-image {
     width: 100%;
-    height: 210px;      /* tamanho perfeito estilo app */
+    height: 210px;      
     object-fit: cover;
 }
 .tag-alert {
@@ -203,14 +193,116 @@ h2 {
 
 
 .tag-alert.red {
-  background-color: #ff3b30; /* lotado */
+  background-color: #ff3b30; 
 }
 
 .tag-alert.orange {
-  background-color: #ff9500; /* moderado */
+  background-color: #ff9500; 
 }
 
 .tag-alert.green {
-  background-color: #34c759; /* vazio */
+  background-color: #34c759; 
 }
 
+.comentario-card {
+    background: #fff;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px #0002;
+}
+
+.comentario-stars {
+    font-size: 20px;
+    color: #ffc400;
+    margin-bottom: 5px;
+}
+
+/* MODAL */
+.modal-bg {
+    position: fixed;
+    inset: 0;
+    background: #0007;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background: white;
+    padding: 20px;
+    width: 85%;
+    max-width: 360px;
+    border-radius: 12px;
+}
+
+.stars-area {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.star {
+    font-size: 35px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star.selected {
+    color: #ffc400;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn-send {
+    background: #ff7a00;
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+
+.btn-cancel {
+    background: #aaa;
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.comentario-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.comentario-nome {
+    font-weight: bold;
+    color: #333;
+}
+
+.comentario-data {
+    color: #777;
+    font-size: 13px;
+}
+
+.comentario-texto {
+    font-size: 15px;
+    margin-top: 6px;
+    color: #444;
+}
+
+.comentario-stars {
+    font-size: 18px;
+    color: #ffc400;
+}

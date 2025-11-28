@@ -2,49 +2,50 @@ const estabelecimentos = [
     { id: 1, nome: "Bar do Alemão", foto: "alemao.jpg", avaliacao: 4.8, avaliacoes: 234, categoria: "Bar",
       promocao: "2 cervejas pelo preço de 1", desconto: "15% de desconto",
       descricao: "Tradicional bar alemão com a melhor cerveja artesanal da cidade.",
-      horario: "17:00 - 02:00", preco: "$$", endereco: "Rua Central, 400 - Centro", telefone: "(83) 99999-1111" , statusFila: "lotado"
-},
+      horario: "17:00 - 02:00", preco: "$$", endereco: "Rua Central, 400 - Centro", telefone: "(83) 99999-1111", statusFila: "lotado"
+    },
 
     { id: 2, nome: "Maria's Pub", foto: "maria.jpg", avaliacao: 4.7, avaliacoes: 98, categoria: "Pub",
       promocao: "Chopp 600ml R$7", desconto: "Todas as noites",
       descricao: "Pub com música ao vivo.",
-      horario: "18:00 - 03:00", preco: "$$", endereco: "Rua Maciel Pinheiro, 1234 - Centro", telefone: "(83) 98765-4321" ,statusFila: "medio"
-},
+      horario: "18:00 - 03:00", preco: "$$", endereco: "Rua Maciel Pinheiro, 1234 - Centro", telefone: "(83) 98765-4321", statusFila: "medio"
+    },
 
     { id: 3, nome: "Seu João Boteco", foto: "joao.jpg", avaliacao: 4.6, avaliacoes: 146, categoria: "Boteco",
       promocao: "Caipirinha R$5", desconto: "A noite toda",
       descricao: "Boteco tradicional com petiscos artesanais.",
-      horario: "16:00 - 01:00", preco: "$", endereco: "Rua das Flores, 88", telefone: "(83) 99888-2233" ,statusFila: "vazio"
-},
+      horario: "16:00 - 01:00", preco: "$", endereco: "Rua das Flores, 88", telefone: "(83) 99888-2233", statusFila: "vazio"
+    },
 
     { id: 4, nome: "Bistrô da Lú", foto: "lu.jpg", avaliacao: 4.9, avaliacoes: 200, categoria: "Bistrô",
       promocao: "Vinho da Casa 20% OFF", desconto: "Sexta e sábado",
       descricao: "Ambiente elegante com pratos exclusivos.",
-      horario: "19:00 - 00:00", preco: "$$$", endereco: "Av. Gourmet, 200", telefone: "(83) 91234-5678" ,statusFila: "medio"
-},
+      horario: "19:00 - 00:00", preco: "$$$", endereco: "Av. Gourmet, 200", telefone: "(83) 91234-5678", statusFila: "medio"
+    },
 
     { id: 5, nome: "Hamburgueria do Zé", foto: "ze.jpg", avaliacao: 4.8, avaliacoes: 180, categoria: "Hamburgueria",
       promocao: "Combo 2x1", desconto: "Somente hoje",
       descricao: "Hambúrguer artesanal com ingredientes premium.",
-      horario: "18:00 - 23:30", preco: "$$", endereco: "Rua do Sol, 50", telefone: "(83) 95555-7788",statusFila: "medio"
- },
+      horario: "18:00 - 23:30", preco: "$$", endereco: "Rua do Sol, 50", telefone: "(83) 95555-7788", statusFila: "medio"
+    },
 
     { id: 6, nome: "Pizza da Praça", foto: "pizza.jpg", avaliacao: 4.5, avaliacoes: 310, categoria: "Pizzaria",
       promocao: "Pizza Grande R$25", desconto: "Somente delivery",
       descricao: "Pizzaria tradicional com massa fresca.",
-      horario: "18:00 - 00:00", preco: "$$", endereco: "Praça Central, 40", telefone: "(83) 96666-8899",statusFila: "lotado" },
+      horario: "18:00 - 00:00", preco: "$$", endereco: "Praça Central, 40", telefone: "(83) 96666-8899", statusFila: "lotado"
+    },
 
     { id: 7, nome: "Café Encanto", foto: "cafe.jpg", avaliacao: 4.9, avaliacoes: 410, categoria: "Café",
       promocao: "Cappuccino R$6", desconto: "Manhã toda",
       descricao: "O melhor café da cidade com ambiente aconchegante.",
-      horario: "07:00 - 20:00", preco: "$", endereco: "Rua Esperança, 12", telefone: "(83) 97777-3344",statusFila: "vazio"
- },
+      horario: "07:00 - 20:00", preco: "$", endereco: "Rua Esperança, 12", telefone: "(83) 97777-3344", statusFila: "vazio"
+    },
 
     { id: 8, nome: "Restaurante Sabor Caseiro", foto: "caseiro.jpg", avaliacao: 4.3, avaliacoes: 290, categoria: "Restaurante",
       promocao: "Prato Feito R$12", desconto: "Seg a Sex",
       descricao: "Comida caseira deliciosa.",
-      horario: "11:00 - 15:00", preco: "$", endereco: "Rua do Campo, 90", telefone: "(83) 93333-1122",statusFila: "vazio"
- }
+      horario: "11:00 - 15:00", preco: "$", endereco: "Rua do Campo, 90", telefone: "(83) 93333-1122", statusFila: "vazio"
+    }
 ];
 
 function Lista({ abrir }) {
@@ -71,6 +72,39 @@ function Lista({ abrir }) {
 function Perfil({ id, voltar }) {
     id = Number(id);
     const bar = estabelecimentos.find(e => e.id === id);
+
+    const [showModal, setShowModal] = React.useState(false);
+    const [estrela, setEstrela] = React.useState(0);
+    const [texto, setTexto] = React.useState("");
+
+    const [comentarios, setComentarios] = React.useState([
+        { nome: "Ana Beatriz", estrelas: 5, texto: "Lugar maravilhoso! Atendimento perfeito e comida incrível.", data: "2025-11-26" },
+        { nome: "Carlos Eduardo", estrelas: 3, texto: "Ambiente bom, mas esperei muito para ser atendido.", data: "2025-11-20" },
+        { nome: "Mariana Silva", estrelas: 4, texto: "Gostei bastante! Voltarei outras vezes.", data: "2025-11-18" },
+        { nome: "Pedro Henrique", estrelas: 2, texto: "Achei o preço meio salgado e a mesa estava suja.", data: "2025-11-15" },
+        { nome: "Juliana Rocha", estrelas: 5, texto: "Melhor bar da cidade! Música boa e ótimo atendimento!", data: "2025-11-10" },
+        { nome: "Ricardo Alves", estrelas: 1, texto: "Não gostei. Demorou demais e o prato veio frio.", data: "2025-11-05" }
+    ]);
+
+    function enviarComentario() {
+        if (estrela === 0 || texto.trim() === "") {
+            alert("Dê uma nota e escreva algo!");
+            return;
+        }
+
+        const novo = { 
+            nome: "Cliente", 
+            estrelas: estrela, 
+            texto, 
+            data: new Date().toISOString().slice(0,10) 
+        };
+
+        setComentarios([novo, ...comentarios]);
+        setEstrela(0);
+        setTexto("");
+        setShowModal(false);
+    }
+
     if (!bar) return <div>Erro ao carregar</div>;
 
     return (
@@ -78,19 +112,16 @@ function Perfil({ id, voltar }) {
 
             <div className="header-image">
                 <button className="back-btn" onClick={voltar}>←</button>
-                <div 
-  className={
-    bar.statusFila === "lotado" 
-      ? "tag-alert red" 
-      : bar.statusFila === "medio"
-        ? "tag-alert orange"
-        : "tag-alert green"
-  }
->
-  {bar.statusFila === "lotado" && "Muita fila agora!"}
-  {bar.statusFila === "medio" && "Movimento moderado"}
-  {bar.statusFila === "vazio" && "Sem filas no momento"}
-</div>
+
+                <div className={
+                    bar.statusFila === "lotado" ? "tag-alert red" :
+                    bar.statusFila === "medio" ? "tag-alert orange" :
+                    "tag-alert green"
+                }>
+                    {bar.statusFila === "lotado" && "Muita fila agora!"}
+                    {bar.statusFila === "medio" && "Movimento moderado"}
+                    {bar.statusFila === "vazio" && "Sem filas no momento"}
+                </div>
 
                 <img src={bar.foto} className="bar-image" alt={bar.nome} />
             </div>
@@ -147,13 +178,65 @@ function Perfil({ id, voltar }) {
                     <p className="extra-text">{bar.telefone}</p>
                 </div>
 
-                <button 
-    className="reserve-btn" 
-    onClick={() => window.location.href = `reservas.html?id=${bar.id}`}
->
-    Fazer Reserva
-</button>
+                <button className="reserve-btn" onClick={() => window.location.href = `reservas.html?id=${bar.id}`}>
+                    Fazer Reserva
+                </button>
+
+                <button className="reserve-btn" onClick={() => setShowModal(true)}>
+                    Adicionar Comentário
+                </button>
+
+                <h3 style={{ marginTop: "25px" }}>Avaliações</h3>
+
+                {comentarios.map((c, i) => (
+                    <div key={i} className="comentario-card">
+
+                        <div className="comentario-header">
+                            <span className="comentario-nome">{c.nome}</span>
+                            <span className="comentario-data">{c.data}</span>
+                        </div>
+
+                        <div className="comentario-stars">
+                            {"★".repeat(c.estrelas)}
+                            {"☆".repeat(5 - c.estrelas)}
+                        </div>
+
+                        <p className="comentario-texto">{c.texto}</p>
+
+                    </div>
+                ))}
+
             </div>
+
+            {showModal && (
+                <div className="modal-bg">
+                    <div className="modal-box">
+                        <h3>Avaliação</h3>
+
+                        <div className="stars-area">
+                            {[1,2,3,4,5].map(n => (
+                                <span
+                                    key={n}
+                                    className={n <= estrela ? "star selected" : "star"}
+                                    onClick={() => setEstrela(n)}
+                                >
+                                    ★
+                                </span>
+                            ))}
+                        </div>
+
+                        <textarea
+                            placeholder="Escreva seu comentário..."
+                            value={texto}
+                            onChange={(e) => setTexto(e.target.value)}
+                        />
+
+                        <button className="btn-send" onClick={enviarComentario}>Enviar</button>
+                        <button className="btn-cancel" onClick={() => setShowModal(false)}>Cancelar</button>
+                    </div>
+                </div>
+            )}
+
         </div>
     );
 }

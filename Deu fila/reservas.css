@@ -129,3 +129,10 @@ h3 {
 .confirm-box h2 {
   margin-bottom: 10px;
 }
+.reserva-form input,
+.reserva-form select,
+.reserva-form textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
