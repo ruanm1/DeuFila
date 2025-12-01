@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo - DeuFila</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .catalogo-container {
+            width: 90%;
+            margin: auto;
+        }
+        h2 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .card-lista {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .card {
+            background: white;
+            width: 160px;
+            border-radius: 10px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.2);
+            padding: 10px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .card p {
+            margin: 8px 0 0;
+            font-weight: bold;
+        }
+        .voltar {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 15px;
+            background: #ff4f4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="catalogo-container">
+        <h1>Catálogo</h1>
+        <h2>Restaurantes</h2>
+        <div class="card-lista">
+            <div class="card">
+                <img src="pizza.jpg">
+                <p>Pizzaria Paulista</p>
+            </div>
+            <div class="card">
+                <img src="cafe.jpg">
+                <p>Cafézinho Americano</p>
+            </div>
+            <div class="card">
+                <img src="alemao.jpg">
+                <p>Alemão Lanches</p>
+            </div>
+        </div>
+        <h3>Produtos</h3>
+        <div class="card-lista">
+            <div class="card">
+                <img src="caseiro.jpg">
+                <p>Prato Feito</p>
+            </div>
+            <div class="card">
+                <img src="pizza.jpg">
+                <p>Pizza Média</p>
+            </div>
+            <div class="card">
+                <img src="cafe.jpg">
+                <p>Café Expresso</p>
+            </div>
+        </div>
+        <a href="index.html" class="voltar">Voltar</a>
+    </div>
+</body>
+</html>
