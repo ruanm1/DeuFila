@@ -1,35 +1,26 @@
 const form = document.querySelector("#form");
-const nameInput = document.querySelector("#name");
-const emailInput = document.querySelector("#email");
-const passwordInput = document.querySelector("#password");
+if (!form) return;
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
+form.addEventListener("submit", function (event) {
+    const nameInput = document.querySelector("#name");
+    const emailInput = document.querySelector("#email");
+    const passwordInput = document.querySelector("#password");
 
-    if(nameInput.value ===""){
-        alert("Por favor, preencha o seu nome");
+    if (nameInput && nameInput.value.trim() === "") {
+        event.preventDefault();
+        alert("Preencha seu nome");
         return;
     }
-    form.submit();
-})
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();    
-    if(emailInput.value ===""){
-        alert("Por favor, preencha o seu e-mail");
+    if (!emailInput || emailInput.value.trim() === "") {
+        event.preventDefault();
+        alert("Preencha seu e-mail");
         return;
     }
-    if(!validatePassword(passwordInput.value, 8)){
-        alert("A senha precisa ter no mínimo 8 dígitos");
+
+    if (!passwordInput || passwordInput.value.trim().length < 8) {
+        event.preventDefault();
+        alert("A senha deve ter pelo menos 8 dígitos");
         return;
     }
-    form.submit();
-})
-
-function validatePassword(password, minDigit) {
-    if (password.length >= minDigit) {
-        return true
-
-    }
-    return false
-};
+});
