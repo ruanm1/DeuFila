@@ -433,7 +433,7 @@ function PerfilUser() {
 
             <div
                 className="perfilUser-sair"
-                onClick={() => window.location.href = "entrada_normal.html"}
+                onClick={() => window.location.href = "index.html"}
             >
                 🚪 Sair
             </div>

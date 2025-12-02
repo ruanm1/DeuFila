@@ -2,43 +2,31 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Bares e Restaurantes</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Deu Fila</title>
+    <link rel="stylesheet" href="caio.css">
+    <script src="main.js" defer></script>
 </head>
-
 <body>
 
-    <div id="root"></div>
+    <div class="login-container">
+        <img src="logo_deufila_png.png" alt="Logo Deu Fila" class="logo">
 
-    <svg style="display:none;">
+        <h1>Entrar</h1>
 
-        <symbol id="icon-star" viewBox="0 0 24 24">
-            <path fill="#ffc400" d="m12 2 3 6 6 .9-4.5 4.4L17 20l-5-2.6L7 20l1.5-6.7L4 8.9 10 8Z"/>
-        </symbol>
+        <form id="form" action="catalogo.html">
 
-        <symbol id="icon-clock" viewBox="0 0 24 24">
-            <path fill="#ff7a00" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4a1 1 0 0 1 0-2h3V7a1 1 0 0 1 2 0v5a1 1 0 0 1-1 1Z"/>
-        </symbol>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required>
 
-        <symbol id="icon-money" viewBox="0 0 24 24">
-            <path fill="#00b345" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Zm1 15h-2v-1.2c-1.7-.2-3-1.4-3-2.8h2c0 .6.8 1 2 1s2-.4 2-1-.8-1-2-1c-2.2 0-4-1.3-4-3s1.3-2.6 3-2.9V5h2v1.1c1.7.3 3 1.5 3 2.9h-2c0-.6-.8-1-2-1s-2 .4-2 1 .8 1 2 1c2.2 0 4 1.3 4 3s-1.3 2.7-3 3Z"/>
-        </symbol>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" required minlength="8">
 
-        <symbol id="icon-location" viewBox="0 0 24 24">
-            <path fill="#ff7a00" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 2.5-2.5A2.5 2.5 0 0 1 12 11.5Z"/>
-        </symbol>
+            <button type="submit">Entrar</button>
+        </form>
 
-        <symbol id="icon-phone" viewBox="0 0 24 24">
-            <path fill="#ff7a00" d="M6.6 3A2.6 2.6 0 0 1 9 5.6v2.2c0 .6-.3 1-.8 1.3l-1.4.6a11.4 11.4 0 0 0 5.5 5.5l.6-1.4c.2-.5.7-.8 1.3-.8h2.2A2.6 2.6 0 0 1 21 17.4v1A2.6 2.6 0 0 1 18.4 21 17.4 17.4 0 0 1 3 5.6V5A2.6 2.6 0 0 1 6.6 3Z"/>
-        </symbol>
+        <a href="login.html">Não tem uma conta? Clique aqui</a>
+    </div>
 
-    </svg>
-
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <script type="text/babel" src="app.js"></script>
-    
 </body>
 </html>

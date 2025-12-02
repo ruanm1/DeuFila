@@ -27,7 +27,7 @@ function gerarHorarios(abre, fecha) {
 
   if (fechamento < abertura) fechamento += 24 * 60;
 
-  const limite = fechamento - 180; // 3 horas antes de fechar
+  const limite = fechamento - 180; 
 
   for (let t = abertura; t <= limite; t += 60) {
     const hora = String(Math.floor(t / 60) % 24).padStart(2, "0");
