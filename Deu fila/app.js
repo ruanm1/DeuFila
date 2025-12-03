@@ -390,8 +390,8 @@ function Mapa() {
 
 function PerfilUser() {
 
-    const nome = "Usuário Exemplo";
-    const email = "exemplo@email.com";
+    const nome = "Lorem Ipsilum da Silva";
+    const email = "lorem.y.silva@gmail.com";
 
     return (
         <div className="perfilUser-page page-wrapper">
